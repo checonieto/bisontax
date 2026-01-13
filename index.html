@@ -360,66 +360,105 @@
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
         
-        /* Service Card Spanish Banner */
-        .card-spanish-banner {
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background-color: var(--navy-blue);
+        /* Tax Calculator Section */
+        .tax-calculator {
+            background-color: #0A2540;
             color: var(--white);
-            padding: 5px 15px;
-            border-radius: 15px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1;
+            padding: 80px 0;
         }
         
-        /* Tax Credits Section */
-        .tax-credits {
-            background-color: var(--light-blue);
+        .calculator-container {
+            background: var(--white);
+            color: #0A2540;
+            width: 100%;
+            max-width: 620px;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .3);
+            margin: 0 auto;
         }
         
-        .credits-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 40px;
+        .calculator-brand {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #0A2540;
         }
         
-        .credit-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 25px;
-            flex: 1;
-            min-width: 250px;
-            max-width: 350px;
-            box-shadow: var(--shadow);
+        .calculator-brand span {
+            display: block;
+            font-size: 1.2rem;
+            color: #1FA463;
+        }
+        
+        .lang-toggle {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        
+        .lang-toggle button {
+            background: #0A2540;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            margin-left: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .lang-toggle .active {
+            background: #1FA463;
+        }
+        
+        .calculator-container label {
+            display: block;
+            margin-top: 14px;
+            font-weight: bold;
+            color: #0A2540;
+        }
+        
+        .calculator-container input, .calculator-container select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .calculator-button {
+            background: #1FA463;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            width: 100%;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
             transition: var(--transition);
-            border-left: 5px solid var(--gold-yellow);
         }
         
-        .credit-card:hover {
-            transform: translateY(-8px);
+        .calculator-button:hover {
+            background: #188a53;
         }
         
-        .credit-card h4 {
-            font-size: 1.4rem;
-            color: var(--navy-blue);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
+        .calculator-result {
+            background: #0A2540;
+            color: #fff;
+            margin-top: 25px;
+            padding: 18px;
+            border-radius: 6px;
+            display: none;
+            text-align: center;
+            font-size: 1.3rem;
         }
         
-        .credit-card h4 i {
-            margin-right: 10px;
-            color: var(--gold-yellow);
-        }
-        
-        .credit-card p {
-            font-size: 1rem;
-            line-height: 1.6;
+        .calculator-disclaimer {
+            font-size: .85rem;
+            color: #555;
+            margin-top: 15px;
+            text-align: center;
         }
         
         /* Requirements Section */
@@ -479,23 +518,6 @@
             margin: 0;
             font-weight: 600;
             color: var(--navy-blue);
-        }
-        
-        /* Requirements Spanish Banner */
-        .requirements-spanish-banner {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--navy-blue);
-            color: var(--white);
-            padding: 8px 25px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            white-space: nowrap;
-            z-index: 1;
         }
         
         /* Schedule Section */
@@ -624,23 +646,6 @@
             font-size: 1.2rem;
             font-weight: 700;
             color: var(--navy-blue);
-        }
-        
-        /* Schedule Spanish Banner */
-        .schedule-spanish-banner {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--navy-blue);
-            color: var(--white);
-            padding: 8px 25px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            white-space: nowrap;
-            z-index: 1;
         }
         
         /* Footer */
@@ -814,17 +819,6 @@
                 flex-direction: column;
                 gap: 30px;
             }
-            
-            /* Adjust Spanish banners for mobile */
-            .spanish-large-banner {
-                font-size: 1rem;
-                padding: 8px 20px;
-            }
-            
-            .card-spanish-banner, .schedule-spanish-banner, .requirements-spanish-banner {
-                font-size: 0.8rem;
-                padding: 5px 15px;
-            }
         }
         
         @media (max-width: 576px) {
@@ -885,7 +879,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#credits">Maximize Refund</a></li>
+                    <li><a href="#calculator">Tax Calculator</a></li>
                     <li><a href="#requirements">What You Need</a></li>
                     <li><a href="#schedule">Schedule</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -906,7 +900,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#credits">Maximize Refund</a></li>
+                <li><a href="#calculator">Tax Calculator</a></li>
                 <li><a href="#requirements">What You Need</a></li>
                 <li><a href="#schedule">Schedule</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -941,9 +935,6 @@
             
             <div class="services-container">
                 <div class="service-card">
-                    <div class="card-spanish-banner">
-                        <i class="fas fa-language"></i> Se Habla Español
-                    </div>
                     <div class="service-icon">
                         <i class="fas fa-home"></i>
                     </div>
@@ -954,9 +945,6 @@
                 </div>
                 
                 <div class="service-card">
-                    <div class="card-spanish-banner">
-                        <i class="fas fa-language"></i> Se Habla Español
-                    </div>
                     <div class="service-icon">
                         <i class="fas fa-video"></i>
                     </div>
@@ -976,43 +964,66 @@
         </div>
     </section>
 
-    <!-- Tax Credits Section -->
-    <section class="section tax-credits" id="credits">
+    <!-- Tax Calculator Section -->
+    <section class="section tax-calculator" id="calculator">
         <div class="container">
             <div class="section-title">
-                <h2>Maximize Your Tax Refund</h2>
-                <p>Our experts identify every deduction and credit you qualify for to ensure you get the maximum refund possible</p>
+                <h2 style="color: var(--white);">2026 Tax Refund Estimator</h2>
+                <p style="color: #d1d5db;">Get an instant estimate of your potential tax refund for 2026</p>
             </div>
             
-            <div class="credits-container">
-                <div class="credit-card">
-                    <h4><i class="fas fa-child"></i> Child Tax Credits</h4>
-                    <p>We help you claim up to $2,000 per qualifying child, plus additional credits for child care expenses that can save you hundreds more.</p>
+            <div class="calculator-container">
+                <div class="lang-toggle">
+                    <button id="enBtn" class="active" onclick="setLang('en')">English</button>
+                    <button id="esBtn" onclick="setLang('es')">Español</button>
                 </div>
                 
-                <div class="credit-card">
-                    <h4><i class="fas fa-graduation-cap"></i> Education Credits</h4>
-                    <p>American Opportunity Credit and Lifetime Learning Credit can provide up to $2,500 per student for qualified education expenses.</p>
+                <div class="calculator-brand">
+                    Bison Tax Preparation
+                    <span id="title">2026 Tax Refund Estimator</span>
                 </div>
                 
-                <div class="credit-card">
-                    <h4><i class="fas fa-hand-holding-usd"></i> Earned Income Tax Credit</h4>
-                    <p>For low to moderate-income workers, this credit can be worth up to $6,935 depending on income and number of children.</p>
-                </div>
+                <label id="incomeLbl">Annual Income ($)</label>
+                <input id="income" type="number">
                 
-                <div class="credit-card">
-                    <h4><i class="fas fa-home"></i> Homeowner Deductions</h4>
-                    <p>Mortgage interest, property taxes, and energy-efficient home improvements can lead to significant tax savings.</p>
-                </div>
+                <label id="taxPaidLbl">Federal Taxes Paid ($)</label>
+                <input id="taxesPaid" type="number">
                 
-                <div class="credit-card">
-                    <h4><i class="fas fa-briefcase"></i> Business Expenses</h4>
-                    <p>Self-employed individuals can deduct business expenses, home office costs, vehicle use, and health insurance premiums.</p>
-                </div>
+                <label id="statusLbl">Filing Status</label>
+                <select id="status">
+                    <option value="single">Single</option>
+                    <option value="mfj">Married Filing Jointly</option>
+                    <option value="hoh">Head of Household</option>
+                </select>
                 
-                <div class="credit-card">
-                    <h4><i class="fas fa-heart"></i> Charitable Contributions</h4>
-                    <p>Donations to qualified charities are deductible, and we help ensure you have proper documentation for all contributions.</p>
+                <label id="ageLbl">Age</label>
+                <select id="age">
+                    <option value="under65">Under 65</option>
+                    <option value="65plus">65 or Older</option>
+                </select>
+                
+                <label id="depLbl">Children Under 17</label>
+                <input id="deps" type="number" value="0">
+                
+                <label>Tip Income (No Tax on Tips)</label>
+                <input id="tips" type="number" placeholder="Up to $25,000">
+                
+                <label>Overtime Premium Pay</label>
+                <input id="ot" type="number" placeholder="Overtime half-rate only">
+                
+                <label>Auto Loan Interest (US Vehicle)</label>
+                <input id="auto" type="number" placeholder="Up to $10,000">
+                
+                <label>State & Local Taxes Paid (SALT)</label>
+                <input id="salt" type="number" placeholder="Up to $40,000">
+                
+                <button class="calculator-button" id="calcBtn" onclick="calculate()">Estimate My Refund</button>
+                
+                <div class="calculator-result" id="result"></div>
+                
+                <div class="calculator-disclaimer" id="disc">
+                    Estimate only. Includes temporary 2025–2028 deductions.  
+                    Trump Accounts provide long-term savings, not immediate refunds.
                 </div>
             </div>
         </div>
@@ -1027,9 +1038,6 @@
             </div>
             
             <div class="requirements-list">
-                <div class="requirements-spanish-banner">
-                    <i class="fas fa-language"></i> Se Habla Español
-                </div>
                 <h3>Required Documents</h3>
                 <ul>
                     <li><strong>Prior Year Tax Return:</strong> Your completed tax return from last year</li>
@@ -1061,9 +1069,6 @@
             
             <div class="schedule-options">
                 <div class="schedule-card">
-                    <div class="schedule-spanish-banner">
-                        <i class="fas fa-language"></i> Se Habla Español
-                    </div>
                     <h3><i class="fas fa-home"></i> In-Home Visit</h3>
                     <p>Our tax professional will come to your home at the scheduled time. We'll bring all necessary equipment and prepare your taxes on-site with personal guidance throughout the process.</p>
                     <p><strong>Duration:</strong> 60-90 minutes</p>
@@ -1092,9 +1097,6 @@
                 </div>
                 
                 <div class="schedule-card">
-                    <div class="schedule-spanish-banner">
-                        <i class="fas fa-language"></i> Se Habla Español
-                    </div>
                     <h3><i class="fas fa-video"></i> Video Conference</h3>
                     <p>Meet with our tax professional via secure video conference. We'll guide you through the entire process and prepare your taxes remotely using our secure document sharing system.</p>
                     <p><strong>Duration:</strong> 60-90 minutes</p>
@@ -1163,7 +1165,7 @@
                     <h3>Quick Links</h3>
                     <a href="#home">Home</a>
                     <a href="#services">Services</a>
-                    <a href="#credits">Maximize Refund</a>
+                    <a href="#calculator">Tax Calculator</a>
                     <a href="#requirements">What You Need</a>
                     <a href="#schedule">Schedule Appointment</a>
                 </div>
@@ -1194,13 +1196,13 @@
         // Open mobile menu
         mobileMenuBtn.addEventListener('click', function() {
             mobileNav.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+            document.body.style.overflow = 'hidden';
         });
         
         // Close mobile menu
         mobileNavClose.addEventListener('click', function() {
             mobileNav.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
+            document.body.style.overflow = 'auto';
         });
         
         // Close mobile menu when clicking on a link
@@ -1228,6 +1230,100 @@
                 }
             });
         });
+        
+        // Tax Calculator Functions
+        let lang = "en";
+        
+        function setLang(l){
+            lang = l;
+            document.getElementById("enBtn").classList.toggle("active", l === "en");
+            document.getElementById("esBtn").classList.toggle("active", l === "es");
+            document.getElementById("title").innerText =
+                l === "en" ? "2026 Tax Refund Estimator" : "Estimador de Reembolso 2026";
+            document.getElementById("calcBtn").innerText =
+                l === "en" ? "Estimate My Refund" : "Calcular Reembolso";
+            
+            // Update labels based on language
+            if (l === "es") {
+                document.getElementById("incomeLbl").innerText = "Ingreso Anual ($)";
+                document.getElementById("taxPaidLbl").innerText = "Impuestos Federales Pagados ($)";
+                document.getElementById("statusLbl").innerText = "Estado de Declaración";
+                document.getElementById("ageLbl").innerText = "Edad";
+                document.getElementById("depLbl").innerText = "Niños Menores de 17 Años";
+            } else {
+                document.getElementById("incomeLbl").innerText = "Annual Income ($)";
+                document.getElementById("taxPaidLbl").innerText = "Federal Taxes Paid ($)";
+                document.getElementById("statusLbl").innerText = "Filing Status";
+                document.getElementById("ageLbl").innerText = "Age";
+                document.getElementById("depLbl").innerText = "Children Under 17";
+            }
+        }
+        
+        function progressiveTax(income, status){
+            let tax = 0;
+            if(status === "mfj"){
+                if(income <= 22000) tax = income * 0.10;
+                else if(income <= 89450) tax = 2200 + (income - 22000) * 0.12;
+                else tax = 10294 + (income - 89450) * 0.22;
+            } else {
+                if(income <= 11000) tax = income * 0.10;
+                else if(income <= 44725) tax = 1100 + (income - 11000) * 0.12;
+                else tax = 5147 + (income - 44725) * 0.22;
+            }
+            return tax;
+        }
+        
+        function calculate(){
+            const incomeVal = Number(document.getElementById("income").value) || 0;
+            const taxesPaidVal = Number(document.getElementById("taxesPaid").value) || 0;
+            const dependentsVal = Number(document.getElementById("deps").value) || 0;
+            const tipsVal = Math.min(Number(document.getElementById("tips").value) || 0, 25000);
+            const otVal = Math.min(
+                Number(document.getElementById("ot").value) || 0,
+                document.getElementById("status").value === "mfj" ? 25000 : 12500
+            );
+            const autoVal = Math.min(Number(document.getElementById("auto").value) || 0, 10000);
+            const saltVal = Math.min(Number(document.getElementById("salt").value) || 0, 40000);
+        
+            const statusVal = document.getElementById("status").value;
+            const ageVal = document.getElementById("age").value;
+        
+            let standardDeduction =
+                statusVal === "mfj" ? 27700 :
+                statusVal === "hoh" ? 20800 : 13850;
+        
+            if(ageVal === "65plus"){
+                standardDeduction += statusVal === "mfj" ? 12000 : 6000;
+            }
+        
+            const totalDeductions =
+                standardDeduction + tipsVal + otVal + autoVal + saltVal;
+        
+            const taxableIncome = Math.max(0, incomeVal - totalDeductions);
+        
+            const tax = progressiveTax(taxableIncome, statusVal);
+        
+            const childTaxCredit = dependentsVal * 2200;
+            const refundableCTC = Math.min(childTaxCredit, dependentsVal * 1700);
+        
+            const eitc =
+                incomeVal < 55000 && dependentsVal > 0
+                    ? dependentsVal === 1 ? 3500
+                    : dependentsVal === 2 ? 6000
+                    : 7200
+                    : 0;
+        
+            const refund =
+                taxesPaidVal - tax + refundableCTC + eitc;
+        
+            const resultDiv = document.getElementById("result");
+            resultDiv.style.display = "block";
+        
+            resultDiv.innerText =
+                refund >= 0
+                ? (lang === "en" ? "Estimated Refund: $" : "Reembolso Estimado: $") + refund.toFixed(2)
+                : (lang === "en" ? "Estimated Amount Owed: $" : "Cantidad a Pagar: $") + Math.abs(refund).toFixed(2);
+        }
         
         // Simple form submission simulation
         document.querySelectorAll('.cta-button, .meet-link').forEach(button => {
